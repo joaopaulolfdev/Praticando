@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--<h2>O que o javaScript pode fazer?</h2>
+<p id="demo">JavaScript altera o conteúdo HTML</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Olá JavaScript!"'>Click me!</button>-->
+
+<!--<h2>O que o javaScript pode fazer?</h2>
+<p>JavaScript altera o conteúdo HTML</p>
+<p>Nesse caso, o javascript altera o valor do atributo src(fonte) de uma imagem.</p>
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Acenda a luz</button>
+<img id="myImage" src='p0ic_bulbonff.gif' style="width: 100px;">
+<button onclick="document.getElementById(myImage).src='pic_bulboff.git'">Acenda a luz</button>-->
+
+<!--<script>
+    function myFunction(){
+        document.getElementById("demo").innerHTML = 'Parágrafo alterado.';
+    };
+</script>
+<body>
+    <h2>Demonstração JavaScript no cabeçalho</h2>
+    <p id="demo">Um paragrafo</p>
+    <button type="button" onclick="myFunction()">Experimente</button>-->
+
+    <!--<h2>Minha primeira página web</h2>
+    <p>Meu primeiro parágrafo</p>
+    <p id="demo"></p>
+    <script>
+         //document.getElementById('demo').innerHTML = 5 + 6;
+        // document.write(5 + 6);
+       // window.alert(5 + 6);
+      //alert(5 + 6);
+     //console.log(5 + 6);
+    </script>
+    <button type="button" onclick="document.write(5 + 6)">Tente</button>
+    <button onclick="window.print()">Imprimir esta página</button>-->
+
+    <!--<h2>Instrucôes JavaScript</h2>
+    <P>Os blocos de códigos JavaScript entre { e }</P>
+    <button type="button" onclick="myFunction()">click me</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        function myFunction(){
+            document.getElementById("demo").innerHTML = 'Olá Dolly';
+            document.getElementById("demo1").innerHTML = 'como vai você?';
+        }
+    </script>-->
+
+<!--<h2>JavaScript const</h2>
+<p>Você NÃO pode reatribuir uma Array constante:</p>
+<p id="demo"></p>
+<script>
+try {
+  const cars = ["Saab", "Volvo", "BMW"];
+  cars = ["Toyota", "Volvo", "Audi"];
+}
+catch (err) {
+  document.getElementById("demo").innerHTML = err;
+}
+</script>-->
+
+<!--<h2>Eventos JavaScript com HTML</h2>
+<button onmouseover="document.getElementById('demo').innerHTML=Date()">Click</button>
+<h6 id="demo"></h6>-->
+
+<!--<h2>Objetos e matrizes JavaScript aninhados</h2>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+    let x = " ";
+    const myObj = {
+        name : "John",
+        age : 37,
+        cars : [
+            {name:"FORD", models:["fiesta", "Focus", "Mustang"]},
+            {name:"BMW", models:["320", "X3", "X5"]},
+            {name:"FIAT", models:["500", "Panda"]}
+        ]
+    }
+        for(let i in myObj.cars){
+        x += "<h2>" + myObj.cars[i].name + "</h2>";
+        for(let j in myObj.cars[i].models){
+            x += myObj.cars[i].models[j] + "<br>";
+        }
+    }
+    document.getElementById("demo").innerHTML = x;
+    document.getElementById("demo1").innerHTML = myObj.name   + "  " +  myObj.age;
+    </script>-->
+
+    <!--<h1>O JavaScript <i>this</i> Palavra-chave</h1>
+    <p>Nesse exemplo, <b>this</b> é um metodo do objeto pessoa.</p>
+    <p>Porque <b> fullName </b> é um método do objeto pessoa</p>
+    <p id="demo"></p>
+    <script>
+        //Criar um Objeto:
+       const person = {
+        firstName : "John",
+        lastName : "Doe",
+        id : 5566,
+        fullName : function(){
+            return this.firstName + " " + this.lastName;
+        }
+}
+                //Exibe os dados do objeto:
+        document.getElementById("demo").innerHTML = person.fullName();
+    </script>-->
+
+  <!--<h2>Objetos JavaScript</h2>
+  <p>A exibição de um objeto JavaScript resultará em [object Object];</p>
+  <p id="demo"></p>
+  <script>
+    const person = {
+        name : "John",
+        age : 37,
+        city : "Jua"
+    }
+    //[object Object];
+    //document.getElementById('demo').innerHTML = person;
+    //As propriedades de um objeto podem ser exibidas como uma string:
+    //document.getElementById('demo').innerHTML = person.name + " , " + person.age + " , " + person.city;
+    //As propriedades de um objeto podem ser coletadas em um loop:
+    /*let txt = " ";
+    for(let x in person){
+        txt += person[x] + " ";
+    };
+    document.getElementById('demo').innerHTML = txt;*/
+    //Qualquer objeto JavaScript pode ser convertido em um array usando Object.values():
+     /*const myArray = Object.values(person);
+     document.getElementById('demo').innerHTML = myArray;*/
+     //Qualquer objeto JavaScript pode ser stringificado (convertido em uma string) com a função JavaScript JSON.stringify():
+     let myString = JSON.stringify(person);
+     document.getElementById('demo').innerHTML = myString;
+  </script>-->
+
+  <!--<h2>Getters e Setters JavaScript</h2>
+  <p>Perfeito para Criar contatores:</p>
+  <p id="demo"></p>
+  <script>
+    //define o objeto
+    const obj = {counter : 0};
+    //Define Setters e Getters
+    Object.defineProperty(obj, "reset",{
+        get : function(){this.counter = 0;}
+    });
+    Object.defineProperty(obj, "increment", {
+        get : function(){this.counter++}
+    });
+    Object.defineProperty(obj, "decrement",{
+        get : function(){this.counter--;}
+    });
+    Object.defineProperty(obj, "Add", {
+        set : function(value){this.counter += value; }
+    });
+    Object.defineProperty(obj, "subtract", {
+        set : function(value){this.counter -= value;}
+    });
+    //Jogar com o contador
+    obj.reset;
+    obj.Add = 5;
+    obj.subtract = 1;
+    obj.decrement;
+    obj.increment;
+    document.getElementById('demo').innerHTML = obj.counter;
+
+  </script>-->
+
+  <!--<h2>JavaScript Obejeto Construdor</h2>
+  <p id="demo"></p>
+  <script>
+//função do construdor para o objeto Pessoa;
+function Person(firts, last, age, eye){
+    this.FirtsName = firts;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    this.nationality = "English";
+}
+//Criar 2 Pessoas para o objeto;
+const myFather = new Person("John", "Doe", 37, "Blue");
+const myMother = new Person("Sally", "Rally", 48, "Green");
+//Exibe a nacionalidade
+document.getElementById("demo").innerHTML = "My father is " + myFather.nationality  + ". My mother is " + myMother.FirtsName
+  </script>-->
+
+  <!--<h2>JavaScript Iteráveis</h2>
+  <p>Iterável feito em casa</p>
+  <p id="demo"></p>
+  <script>
+   //Iterável feito em casa
+   function myNumbers(){
+    let n = 0;
+    return{
+        next: function(){
+            n += 10;
+            return{value: n, done: false};
+        }
+    };
+   } 
+   //Criar a Iterável
+   const n = myNumbers();
+   n.next();
+   n.next();
+   //n.next();
+   document.getElementById("demo").innerHTML = n.next().value;
+  </script>-->
+
+  <!--<h2>JavaScript Sets</h2>
+  <p>forEach() calls a function for Each element:</p>
+  <p id="demo"></p>
+  <script>
+    //Criar o Set
+    const letters = new Set(["a", "b", "c"]);
+    //list de todos os elementos
+    let text = " ";
+    letters.forEach(function(value){
+        text += value + "<br>";
+    })
+    document.getElementById("demo").innerHTML = text;
+  </script>-->
+
+ <!--<h2>JavaScript Mapa Objetos</h2>
+  <p>Usar o Map.forEach():</p>
+  <p id="demo"></p>
+  <script>
+    //criar o mapa
+    const fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200]
+    ]);
+    let text = " ";
+    fruits.forEach(function(value, key) {
+        text += key + ' = ' + value + "<br>"
+    });
+    document.getElementById("demo").innerHTML = text;
+  </script>-->
+
+  <!--<h2>JavaScript Function</h2>
+  <p>Este exemplo chama uma função que executa um cálculo e retorna o resultado:</p>
+  <p id="demo"></p>
+  <script>
+    var x = myFunction(4, 3);
+    document.getElementById("demo").innerHTML = x;
+    function myFunction(a , b){
+        return a * b;
+    }
+    </script>-->
+
+    <!--<h2>JavaScript Arrow Function</h2>
+    <p>Com funções de seta, você não precisa digitar a palavra-chave FUNCTION, a palavra-chave RETURN e as chaves</p>
+    <p>As funcões de seta não são suportadas no IE11 ou anterior</p>
+    <p id="demo"></p>
+    <script>
+        const x = (x, y) => x * y;
+        document.getElementById('demo').innerHTML = x(3, 4);
+    </script>-->
+
+    <!--<h2>JavaScript Function</h2>
+    <p>Em HTML o valor de <b>this</b>, em um funcão global, e o window objeto</p>
+    <p id="demo"></p>
+    <script>
+        let x = myFunction();
+        function myFunction(){
+            return this;
+        }
+        document.getElementById('demo').innerHTML = x;
+    </script>-->
+
+    <!--<h1>JavaScript Function</h1>
+    <h2>Callback function</h2>
+    <P id="demo"></P>
+    <script>
+        //Criar um Array
+        const myNumbers = [4, 1, -20, -7, 5, 9,-6];
+        //Chama(Call) removeNeg com um retorno de Chamada(callback)
+        const posNumbers = removeNeg(myNumbers, (x) => x >= 0);
+        //Exibe Resultado
+        document.getElementById('demo').innerHTML = posNumbers;
+        //Remover números negativos
+        function removeNeg(numbers, callback){
+            const myArray = [];
+            for(const x of numbers){
+                if(callback(x)){
+                    myArray.push(x);
+                }
+            }
+            return myArray
+        }
+    </script>-->
+
+    <!--<h1>Function javaScript</h1>
+    <h2>setTimeout() com a callback</h2>
+    <P>Aguarde 3 segundos (3000 milisegundos) para esta página mudar</P>
+    <p id="demo"></p>
+    <script>
+        setTimeout(myFunction, 3000);
+        function myFunction(){
+            document.getElementById('demo').innerHTML = 'Olá mundo'
+        }
+    </script>-->
+
+    <!--<h2>JavaScript Promise</h2>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some){
+            document.getElementById('demo').innerHTML = some;
+        }
+        let myPromise = new Promise(function(myResolve, myReject){
+            let x = 0;
+            //Algum código(tente mudar x para 5);
+            if(x == 0){
+                myResolve("ok");
+            }else{
+                myReject("Error");
+            }
+        });
+        myPromise.then(
+            function(value){myDisplayer(value);},
+            function(error){myDisplayer(error);}
+        );
+    </script>-->
+
+   <!--<h2>JavaScript promise</h2>
+    <p>Aguardem 3 segundos (3000 milisegundos) para esta página mudar</p>
+    <p id="demo"></p>
+    <script>
+        const myPromise = new Promise(function(myResolve, myReject){
+            setTimeout(function(){myResolve('I love you!!');}, 3000);
+        }) ;
+        myPromise.then(function(value){
+            document.getElementById('demo').innerHTML = value;
+        })
+    </script>-->
+
+    <!--<h2>JavaScript Callbacks</h2>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some){
+            document.getElementById('demo').innerHTML = some;
+        }
+        function getFile(myCallback){
+            let req = new XMLHttpRequest();
+            req.onload = function(){
+                if(req.status == 200){
+                    myCallback(this.responseText);
+                }else{
+                    myCallback("Error:" + req.status);
+                }
+            }
+            req.open('GET', "mycar.HTML");
+            req.send();
+        }
+        getFile(myDisplayer);
+    </script>-->
+
+    <!--<h2>JavaScript promise</h2>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some){
+            document.getElementById('demo').innerHTML = some
+        }
+        let myPromise = new Promise(function(myResolve, myReject){
+            let req = new XMLHttpRequest();
+            req.open('GET', "mycar.html");
+            req.onload = function(){
+                if(req.status == 200){
+                    myResolve(req.response);
+                }else{
+                    myReject('File not Found');
+                }
+            }
+            req.send();
+        });
+        myPromise.then(
+            function(value){myDisplayer(value);},
+            function(error){myDisplayer(error);}
+        )
+    </script>-->
+
+    <!--<h2>JavaScript async / await</h2>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some){
+            document.getElementById('demo').innerHTML = some;
+        }
+        async function myFunction(){return "Hello";}
+        myFunction().then(
+            function(value){myDisplayer(value);},
+            function(error){myDisplayer(error);}
+            // tbm pode usar só uma promise sem o 'error'.
+        );
+    </script>-->
+
+    <!--<h2>JavaScript async / await</h2>
+    <p>Aguarde 3 segundos (3000 milisegundos) para esta página carregar</p>
+    <p id="demo"></p>
+    <script>
+        async function myDisplay(){
+            let myPromise = new Promise(function(resolve){
+                setTimeout(function(){resolve('I love you!!');}, 3000);
+            });
+            document.getElementById('demo').innerHTML = await myPromise;
+        }
+        myDisplay();
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p id="intro">Encontrar Elementos HTML por id</p>
+    <p>Esse exemplo demonstra o método <b>getElementById</b></p>
+    <p id="demo"></p>
+    <script>
+        const element = document.getElementById('intro');
+        document.getElementById('demo').innerHTML = "O texto do paragrafo de introdução é: " + element.innerHTML
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p>Encontrando elementos HTML por nome de TAG</p>
+    <p>Este exemplo demonstra o método <b>getElementByTagName</b></p>
+    <p id="demo"></p>
+    <script>
+        const element = document.getElementsByTagName('p');
+        document.getElementById('demo').innerHTML = "O texto no primeiro parágrafo (índice 0) é: " + element[0].innerHTML;
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p class="intro">Olá, mundo</p>
+    <p class="intro">Este exemplo demonstra o <b>querySelectorAll</b> method</p>
+    <p id="demo"></p>
+    <script>
+        const x = document.querySelectorAll('p.intro');
+        document.getElementById('demo').innerHTML = "O primeiro parágrafo (índice 0) com class='intro' é: " + x[0].innerHTML;
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p>Encontrando elementos HTML usando <b>document.forms</b></p>
+    <form id="frm1" action="/action_page.php">
+        primeiro nome: <input type="text" name="fname" value="Donald"><br>
+        Sobrenome: <input type="text" name="1name" value="Duck"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>Este são os valores de cada elemento no formulário:</p>
+    <p id="demo"></p>
+    <script>
+        const x = document.forms["frm1"];
+        let text = " ";
+        for(let i = 0; i < x.length; i++){
+            text += x.elements[i].value + "<br>";
+        }
+        document.getElementById('demo').innerHTML = text;
+    </script>-->
+
+    <!--<script>
+        function validaForm(){
+            let x = document.forms['myForm'] ['fname'].value;
+            if(x == ''){
+                alert('Nome deve ser preenchido');
+                return false
+            }
+        }
+    </script>
+    <h2>Válidadação de JavaScript</h2>
+    <form name="myForm" action="/action_page.php"
+          onsubmit="return validateForm()" method="post">
+          Name: <input type="text" name="fname">
+          <input type="submit" value="Submit">     
+    </form>-->
+
+    <!--<h2>JavaScript Validação</h2>
+    <p>Insira um número entre 1 e 10:</p>
+    <input id="numb">
+    <button type="button" onclick="myFunction()">Submit</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction(){
+           //Obtém o valor do campo de entrada com o id="numb"; 
+           let x = document.getElementById('numb').value;
+           // Se x não for um número ou menor que 1 ou maior que 10
+           let text;
+           if( x < 1 || x > 10){
+            text = "Entrada inválida";
+           }else{
+            text = "Entrada Ok";
+           }
+           document.getElementById('demo').innerHTML = text;
+        }
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p>Alterando o estilo do HTML</p>
+    <p id="p1">Hello World!</p>
+    <p id="p2">Hello World!</p>
+    <script>
+        document.getElementById('p2').style.color = "Blue";
+        document.getElementById('p2').style.fontFamily = 'Arial';
+        document.getElementById('p2').style.fontSize = 'Larger';
+    </script>-->
+
+    <!--<style>
+        #container{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: red;
+        }
+    </style>
+    <h2>Minha Primeira Animação JavaScript</h2>
+    <p><button onclick="myMove()">Click me</button></p>
+    <div id="container">
+    <div id="animate"></div>
+    </div>
+    <script>
+        function myMove(){
+            let id = null;
+            const elem = document.getElementById('animate');
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 1);
+            function frame(){
+                if(pos == 350){
+                    clearInterval(id);
+                }else{
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+
+        };
+    </script>-->
+
+    <!--<h2>JavaScript AddEventKistener()</h2>
+    <p>Este exemplo usa o método addEventListener() para anexar um evento click a um botão</p>
+    <button id="myBtn">Experimente</button>
+    <script>
+        document.getElementById('myBtn').addEventListener("click", function(){
+            alert(Date());
+        })
+    </script>-->
+
+    <!--<h2>JavaScript addEventListener()</h2>
+    <p>Este exemplo usa o método addEventListener() no objeto window</p>
+    <p>Tente redimensionar esta janela do navegador para acionar o manipulador de eventos "resize".</p>
+    <p id="demo"></p>
+    <script>
+        window.addEventListener("resize", function(){
+            document.getElementById('demo').innerHTML = Math.random();
+        })
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p>Adicione um novo element HTML</p>
+    <div id="div1">
+        <p id="p1">Este é um parágrafo</p>
+        <p id="p2">Este é outro parágrafo</p>
+    </div>
+    <script>
+        const para = document.createElement('h4');
+        const node = document.createTextNode('Este é novo');
+        para.appendChild(node);
+        const element = document.getElementById('div1');
+        element.appendChild(para);
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p>Hello World</p>
+    <p>Hello Norway!</p>
+    <p id="demo"></p>
+    <script>
+        const myCollection = document.getElementsByTagName('p');
+        document.getElementById('demo').innerHTML = "Este documento contém " + myCollection.length + " paragráfos";
+    </script>-->
+
+    <!--<h2>JavaScript HTML DOM</h2>
+    <p>Hello World!</p>
+    <p>Hello Norway</p>
+    <p id="demo"></p>
+    <script>
+        const myNodelist = document.querySelectorAll('p');
+        document.getElementById('demo').innerHTML = "O innerHTML do segundo parágrafo é : " +myNodelist[1].innerHTML;
+    </script>-->
+
+    <!--<h2>JavaScript Geolocalização</h2>
+    <p>Clique no botão para obter as suas coordenadas.</p>
+    <button onclick="getLocation()">Experimente</button>
+    <p id="demo"></p>
+    <script>
+        const x = document.getElementById('demo');
+        function getLocation(){
+            try{
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }catch{
+                x.innerHTML = err;
+            }
+        }
+        function showPosition(position){
+            x.innerHTML = 'Latitude: ' + position.coords.latitude + '<br>Longitude: ' + position.coords.longitude;
+        }
+    </script>-->
+
+    <!--<H2>JavaScript Validação</H2>
+    <p>Digite um número e click em OK:</p>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction()">Ok</button>
+    <p>Se o número for menor que 100 ou maior 300, uma mensagem de erro será exibida.</p>
+    <p id="demo"></p>
+    <script>
+        function myFunction(){
+            const inpObj = document.getElementById('id1');
+            if(!inpObj.checkValidity()){
+                document.getElementById('demo').innerHTML = inpObj.validationMessage;
+            }else{
+                document.getElementById('demo').innerHTML = 'input OK';
+            }
+        }
+    </script>-->
+
+    <div id="demo">
+    <h2>The XMLHttpRequest Objetos</h2>
+    <button type="button" onclick="loadDoc()">Altere o Conteúdo</button>
+    </div>
+    <script>
+        function loadDoc(){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function(){
+                document.getElementById('demo').innerHTML = this.responseText;
+            }
+            xhttp.open('GET', 'ajaxa_info.txt');
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>
